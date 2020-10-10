@@ -90,7 +90,7 @@ then writes unescaped data to ```buf```, and returns the size of ```buf``` as a 
 ```
 
 ## License
-[MIT License](https://github.com/wowry/kiss-unescaper/blob/main/LICENSE).
+[MIT License](https://github.com/wowry/kiss-unescaper/blob/main/LICENSE)
 
 ## Author
 [wowry](https://github.com/wowry)
