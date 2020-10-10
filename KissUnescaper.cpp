@@ -27,11 +27,11 @@ unsigned KissUnescaper::unescape(unsigned char **buf, FILE *fp)
     return buf_size;
 }
 
-unsigned KissUnescaper::unescape(unsigned char **buf, unsigned char *packet, unsigned size)
+unsigned KissUnescaper::unescape(unsigned char **buf, unsigned char *packets, unsigned size)
 {
     unsigned buf_size;
 
-    tie(*buf, buf_size) = _unescape(packet, size);
+    tie(*buf, buf_size) = _unescape(packets, size);
 
     return buf_size;
 }
@@ -77,7 +77,7 @@ pair<unsigned char *, unsigned> KissUnescaper::_unescape(unsigned char *raw_buf,
 
     for (unsigned i = 0; i < size; i++)
     {
-        if (raw_buf[i] == 0xC0) // skip "C0"
+        if (raw_buf[i] == 0xC0) // delete "C0"
         {
             continue;
         }

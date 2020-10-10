@@ -13,21 +13,21 @@ public:
     ~KissUnescaper();
 
     /**
-     * Unescape a file
-     * @param  buf  address of pointer to unescaped data (output data here)
-     * @param  fp  a file to be unescaped
+     * Unescape a binary file
+     * @param  buf  address of pointer to unescaped data (unescaped data is written here)
+     * @param  fp  a binary file to be unescaped
      * @return size of unescaped data [byte]
      */
     unsigned unescape(unsigned char **buf, FILE *fp);
 
     /**
-     * Unescape some packets
-     * @param  buf  address of pointer to unescaped data (output data here)
-     * @param  packet  packet data to be unescaped
-     * @param  size  size of packet data [byte]
+     * Unescape an array of some packets
+     * @param  buf  address of pointer to unescaped data (unescaped data is written here)
+     * @param  packets  an array to be unescaped
+     * @param  size  size of the packets [byte]
      * @return size of unescaped data [byte]
      */
-    unsigned unescape(unsigned char **buf, unsigned char *packet, unsigned size);
+    unsigned unescape(unsigned char **buf, unsigned char *packets, unsigned size);
 
 private:
     /**
@@ -46,11 +46,11 @@ private:
 
     /**
      * Unescape data
-     *  - C0    -> skip
+     *  - C0    -> (delete)
      *  - DB DC -> C0
      *  - DB DD -> DB
      * @param  raw_buf  data to be unescaped
-     * @param  size  size of data [byte]
+     * @param  size  size of raw_buf [byte]
      * @return pointer to unescaped data & size of unescaped data [byte]
      */
     std::pair<unsigned char *, unsigned> _unescape(unsigned char *raw_buf, unsigned size);
