@@ -3,11 +3,11 @@
 </h1>
 
 <p align="center">
-  Unescape tool for KISS special characters
+  Unescaper C++ library for KISS special characters
 </p>
 
 ## Description
-kiss-unescaper replaces special characters in KISS protocol with the original data.
+kiss-unescaper replaces special characters in [KISS protocol](http://www.ax25.net/kiss.aspx) with the original data.
 
 ### Unescape special characters (Hex)
 <table>
