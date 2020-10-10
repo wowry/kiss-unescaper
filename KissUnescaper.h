@@ -14,22 +14,24 @@ public:
 
     /**
      * Unescape a file
+     * @param  buf  address of pointer to unescaped data (output data here)
      * @param  fp  a file to be unescaped
-     * @return pointer to unescaped data & size of unescaped data [byte]
+     * @return size of unescaped data [byte]
      */
-    std::pair<unsigned char *, unsigned> unescape(FILE *fp);
+    unsigned unescape(unsigned char **buf, FILE *fp);
 
     /**
      * Unescape some packets
+     * @param  buf  address of pointer to unescaped data (output data here)
      * @param  packet  packet data to be unescaped
      * @param  size  size of packet data [byte]
-     * @return pointer to unescaped data & size of unescaped data [byte]
+     * @return size of unescaped data [byte]
      */
-    std::pair<unsigned char *, unsigned> unescape(unsigned char *packet, unsigned size);
+    unsigned unescape(unsigned char **buf, unsigned char *packet, unsigned size);
 
 private:
     /**
-     * Get size of the input file
+     * Get size of a input file
      * @param  fp  a file to be unescaped
      * @return size of the file [byte]
      */

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <tuple>
 #include "KissUnescaper.h"
 
 using namespace std;
@@ -11,27 +12,35 @@ KissUnescaper::~KissUnescaper()
     }
 }
 
-pair<unsigned char *, unsigned> KissUnescaper::unescape(FILE *fp)
+unsigned KissUnescaper::unescape(unsigned char **buf, FILE *fp)
 {
-    unsigned size = getFileSize(fp);
+    const unsigned size = getFileSize(fp);
 
-    unsigned char *buf = allocate(size);
+    unsigned char *raw_buf = allocate(size);
 
-    fread(buf, sizeof(unsigned char), size, fp);
+    fread(raw_buf, sizeof(unsigned char), size, fp);
+    
+    unsigned buf_size;
 
-    return _unescape(buf, size);
+    tie(*buf, buf_size) = _unescape(raw_buf, size);
+
+    return buf_size;
 }
 
-pair<unsigned char *, unsigned> KissUnescaper::unescape(unsigned char *packet, unsigned size)
+unsigned KissUnescaper::unescape(unsigned char **buf, unsigned char *packet, unsigned size)
 {
-    return _unescape(packet, size);
+    unsigned buf_size;
+
+    tie(*buf, buf_size) = _unescape(packet, size);
+
+    return buf_size;
 }
 
 unsigned KissUnescaper::getFileSize(FILE *fp)
 {
     fseek(fp, 0, SEEK_END);
 
-    unsigned size = ftell(fp);
+    const unsigned size = ftell(fp);
 
     fseek(fp, 0, SEEK_SET);
 
