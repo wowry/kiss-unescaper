@@ -34,7 +34,7 @@ int main()
     // print unescaped data
     for (int i = 0; i < data_size; i++)
     {
-        cout << uppercase << hex << int(*((unsigned char *)data + i)) << " ";
+        cout << uppercase << hex << int(data[i]) << " ";
     }
     cout << endl
          << endl;
@@ -52,7 +52,7 @@ int main()
     // print unescaped data
     for (int i = 0; i < data_size2; i++)
     {
-        cout << uppercase << hex << int(*((unsigned char *)data2 + i)) << " ";
+        cout << uppercase << hex << int(data2[i]) << " ";
     }
     cout << endl;
 
