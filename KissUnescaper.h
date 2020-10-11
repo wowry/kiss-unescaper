@@ -1,6 +1,7 @@
 #ifndef KISS_UNESCAPER_H
 #define KISS_UNESCAPER_H
 
+#include <iostream>
 #include <vector>
 
 class KissUnescaper

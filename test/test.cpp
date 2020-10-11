@@ -1,6 +1,5 @@
-#include <iostream>
-#include <string>
 #include "../KissUnescaper.h"
+#include <string>
 
 using namespace std;
 
@@ -24,7 +23,7 @@ int main()
     /**
      * Unescape a binary file
      */
-    FILE *fp = openFile("test.log", "rb"); // raw file
+    FILE *fp = openFile("test.log", "rb"); // raw file (mode must be "rb")
 
     unsigned char *data = NULL;
     unsigned data_size;
