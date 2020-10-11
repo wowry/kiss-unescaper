@@ -17,6 +17,9 @@
 </p>
 
 ## Description
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6ec040db80ca42248558f2e4658dfa28)](https://app.codacy.com/gh/wowry/kiss-unescaper?utm_source=github.com&utm_medium=referral&utm_content=wowry/kiss-unescaper&utm_campaign=Badge_Grade)
+
 kiss-unescaper replaces special characters in [KISS protocol](http://www.ax25.net/kiss.aspx) with the original data.
 
 ### Unescape special characters (Hex)
