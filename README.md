@@ -3,6 +3,12 @@
 </h1>
 
 <p align="center">
+  <a href="https://github.com/wowry/kiss-unescaper/actions?query=workflow%3ACodeQL">
+    <img src="https://img.shields.io/github/workflow/status/wowry/kiss-unescaper/CodeQL/main?style=flat-square" alt="Current CodeQL build status." />
+  </a>
+</p>
+
+<p align="center">
   Unescaper C++ library for KISS special characters
 </p>
 
@@ -23,10 +29,11 @@ kiss-unescaper replaces special characters in [KISS protocol](http://www.ax25.ne
 </table>
 
 ### Example
- - before<br>
-   `F8 F9 C0 C0 00 01 DB DC 10 11 DB DD 13 14 C0 C0 FA FB`
- - after<br>
-   `F8 F9 00 01 C0 10 11 DB 13 14 FA FB`
+- before<br>
+`F8 F9 C0 C0 00 01 DB DC 10 11 DB DD 13 14 C0 C0 FA FB`
+
+- after<br>
+`F8 F9 00 01 C0 10 11 DB 13 14 FA FB`
 
 ## Usage
 All you have to do is call `unescape` method.
@@ -34,36 +41,39 @@ All you have to do is call `unescape` method.
 This method accepts input of a binary file or an array of some packets,\
 then writes unescaped data to ```buf```, and returns the size of ```buf``` as a result.
 
- - ### `unsigned unescape(unsigned char **buf, FILE *fp)`
-   Unescape a binary file.
+- ### `unsigned unescape(unsigned char **buf, FILE *fp)`
+  Unescape a binary file.
    
-   #### Parameters
-    - ###### `buf`
-      address of pointer to unescaped data\
-      (unescaped data is written here)
-    - ###### `fp`
-      a binary file to be unescaped
-   
-   #### Return
-   size of unescaped data [byte]
+  #### Parameters
+  - ###### `buf`
+    address of pointer to unescaped data\
+    (unescaped data is written here)
 
- - ### `unsigned unescape(unsigned char **buf, unsigned char *packets, unsigned size)`
-   Unescape an array of some packets.
+  - ###### `fp`
+    a binary file to be unescaped
    
-   #### Parameters
-    - ###### `buf`
-      address of pointer to unescaped data\
-      (unescaped data is written here)
-    - ###### `packets`
-      an array to be unescaped
-    - ###### `size`
-      size of the packets [byte]
+  #### Return
+  size of unescaped data [byte]
+
+- ### `unsigned unescape(unsigned char **buf, unsigned char *packets, unsigned size)`
+  Unescape an array of some packets.
    
-   #### Return
-   size of unescaped data [byte]
+  #### Parameters
+  - ###### `buf`
+    address of pointer to unescaped data\
+    (unescaped data is written here)
+  
+  - ###### `packets`
+    an array to be unescaped
+  
+  - ###### `size`
+    size of the packets [byte]
+   
+  #### Return
+  size of unescaped data [byte]
 
 ### Example
-```
+```C++
 #include "../KissUnescaper.h"
 
 using namespace std;
