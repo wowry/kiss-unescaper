@@ -4,7 +4,11 @@
 
 <p align="center">
   <a href="https://github.com/wowry/kiss-unescaper/actions?query=workflow%3ACodeQL">
-    <img src="https://img.shields.io/github/workflow/status/wowry/kiss-unescaper/CodeQL/main?style=flat-square" alt="Current CodeQL build status." />
+    <img src="https://img.shields.io/github/workflow/status/wowry/kiss-unescaper/CodeQL/main?style=flat-square" alt="CodeQL Build Status" />
+  </a>
+
+  <a href="https://github.com/wowry/kiss-unescaper/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/wowry/kiss-unescaper?style=flat-square" alt="MIT License" />
   </a>
 </p>
 
@@ -45,11 +49,11 @@ then writes unescaped data to ```buf```, and returns the size of ```buf``` as a 
   Unescape a binary file.
    
   #### Parameters
-  - ###### `buf`
+  - ##### `buf`
     address of pointer to unescaped data\
     (unescaped data is written here)
 
-  - ###### `fp`
+  - ##### `fp`
     a binary file to be unescaped
    
   #### Return
