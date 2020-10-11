@@ -24,6 +24,8 @@ unsigned KissUnescaper::unescape(unsigned char **buf, FILE *fp)
 
     tie(*buf, buf_size) = _unescape(raw_buf, size);
 
+    delete[] raw_buf;
+
     return buf_size;
 }
 
@@ -96,8 +98,6 @@ pair<unsigned char *, unsigned> KissUnescaper::_unescape(unsigned char *raw_buf,
             buf[buf_size++] = raw_buf[i];
         }
     }
-
-    delete[] raw_buf;
 
     return {buf, buf_size};
 }
