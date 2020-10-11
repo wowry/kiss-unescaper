@@ -7,6 +7,10 @@
     <img src="https://img.shields.io/github/workflow/status/wowry/kiss-unescaper/CodeQL/main?style=flat-square" alt="CodeQL Build Status" />
   </a>
 
+  <a href="https://www.codacy.com/gh/wowry/kiss-unescaper/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=wowry/kiss-unescaper&amp;utm_campaign=Badge_Grade">
+    <img src="https://img.shields.io/codacy/grade/4ed34ede3ab1404cbd31f99a07b95573?style=flat-square" alt="Codacy Grade Status" />
+  </a>
+
   <a href="https://github.com/wowry/kiss-unescaper/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/wowry/kiss-unescaper?style=flat-square" alt="MIT License" />
   </a>
@@ -63,14 +67,14 @@ then writes unescaped data to ```buf```, and returns the size of ```buf``` as a 
   Unescape an array of some packets.
    
   #### Parameters
-  - ###### `buf`
+  - ##### `buf`
     address of pointer to unescaped data\
     (unescaped data is written here)
   
-  - ###### `packets`
+  - ##### `packets`
     an array to be unescaped
   
-  - ###### `size`
+  - ##### `size`
     size of the packets [byte]
    
   #### Return
