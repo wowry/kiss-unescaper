@@ -29,10 +29,10 @@ kiss-unescaper replaces special characters in [KISS protocol](http://www.ax25.ne
 </table>
 
 ### Example
-- before<br>
+- before\
 `F8 F9 C0 C0 00 01 DB DC 10 11 DB DD 13 14 C0 C0 FA FB`
 
-- after<br>
+- after\
 `F8 F9 00 01 C0 10 11 DB 13 14 FA FB`
 
 ## Usage
