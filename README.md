@@ -100,6 +100,8 @@ int main()
 
     data_size = unescaper.unescape(&data, fp);
 
+    fclose(fp);
+
     // print unescaped data
     for (int i = 0; i < data_size; i++)
     {
